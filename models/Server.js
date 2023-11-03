@@ -15,7 +15,9 @@ class Server {
         
         this.paths = {
             user: '/api/user',
-            ventas: '/api/ventas'
+            ventas: '/api/ventas',
+            orden: '/api/orden',
+            proveedores: '/api/proveedores'
 
         }
 
@@ -34,6 +36,8 @@ class Server {
     routes(){
         this.app.use(this.paths.user, require('../routes/user.routes'));
         this.app.use(this.paths.ventas, require('../routes/venta.routes'));
+        this.app.use(this.paths.orden, require('../routes/orden.routes'));
+        this.app.use(this.paths.proveedores, require('../routes/proveedores.routes'));
     }
 
     middleware(){
